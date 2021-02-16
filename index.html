@@ -19,16 +19,18 @@
     <title>TODO LIST APP</title>
   </head>
   <body class="bg-sky-blue flex justify-center items-center h-screen">
-    <div class="bg-dark-theme text-white w-8/12 p-5 h-5/6 rounded-lg">
+    <div
+      class="bg-dark-theme text-white md:w-8/12 p-5 min-h-5/6 rounded-lg sm:w-4/5 w-11/12"
+    >
       <!-- header -->
-      <div class="header flex justify-between items-center">
+      <div class="header flex justify-around sm:justify-between items-center">
         <div class="">
-          <p class="capitalize text-lg mb-0">Saturday, June 1</p>
+          <p class="capitalize text-2xl sm:text-lg mb-0">Saturday, June 1</p>
           <p class="capitalize text-sky-blue text-sm mt-0">
             <span>3</span> Active tasks
           </p>
         </div>
-        <div class="flex justify-evenly items-center w-2/4">
+        <div class="flex justify-between items-center w-10/12 sm:w-2/5">
           <div class="capitalize cursor-pointer">incomplete Tasks</div>
           <div class="capitalize cursor-pointer text-gray-400">
             completed tasks
@@ -39,10 +41,10 @@
       <input
         type="text"
         placeholder="Enter a task..."
-        class="my-7 rounded p-2 w-2/5 mr-2 outline-none"
+        class="my-7 rounded p-2 w-8/12 md:w-2/5 mr-2 outline-none text-dark-theme"
       />
       <button
-        class="bg-sky-blue rounded py-2 px-3 capitalize hover:bg-green-400"
+        class="bg-sky-blue rounded px-1 py-2 sm:px-3 capitalize focus:outline-none hover:bg-green-400"
       >
         add task
       </button>
