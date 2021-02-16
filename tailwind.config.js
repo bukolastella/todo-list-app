@@ -2,7 +2,15 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    fontFamily: {
+      custom: ["Roboto", "sans-serif"],
+    },
+    extend: {
+      colors: {
+        "sky-blue": "#61dbfb",
+        "dark-theme": "#393f49",
+      },
+    },
   },
   variants: {
     extend: {},
