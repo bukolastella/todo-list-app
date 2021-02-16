@@ -24,20 +24,28 @@
       <div class="header flex justify-between items-center">
         <div class="">
           <p class="capitalize text-lg mb-0">Saturday, June 1</p>
-          <p class="capitalize text-sky-blue text-sm mt-0">3 Active tasks</p>
+          <p class="capitalize text-sky-blue text-sm mt-0">
+            <span>3</span> Active tasks
+          </p>
         </div>
         <div class="flex justify-evenly items-center w-2/4">
-          <div class="capitalize">incomplete Tasks</div>
-          <div class="capitalize">completed tasks</div>
+          <div class="capitalize cursor-pointer">incomplete Tasks</div>
+          <div class="capitalize cursor-pointer text-gray-400">
+            completed tasks
+          </div>
         </div>
       </div>
       <!-- form -->
       <input
         type="text"
         placeholder="Enter a task..."
-        class="my-7 rounded p-2 w-2/5 mr-2"
+        class="my-7 rounded p-2 w-2/5 mr-2 outline-none"
       />
-      <button class="bg-sky-blue rounded py-2 px-3 capitalize">add task</button>
+      <button
+        class="bg-sky-blue rounded py-2 px-3 capitalize hover:bg-green-400"
+      >
+        add task
+      </button>
       <div class="border-b border-gray-500 mt-5"></div>
       <!-- each row -->
       <div class="flex items-center relative border-b border-gray-500 py-5">
@@ -96,7 +104,7 @@
       </div>
       <!-- no task -->
       <div class="flex items-center relative border-b border-gray-500 py-5">
-        <span class="text-sm lowercase text-gray-400 mx-auto capitalize"
+        <span class="text-sm text-gray-400 mx-auto capitalize"
           >you have no pending task.</span
         >
       </div>
@@ -111,6 +119,67 @@
         >
           <path
             d="m369.164062 174.769531c7.8125 7.8125 7.8125 20.476563 0 28.285157l-134.171874 134.175781c-7.8125 7.808593-20.472657 7.808593-28.285157 0l-63.871093-63.875c-7.8125-7.808594-7.8125-20.472657 0-28.28125 7.808593-7.8125 20.472656-7.8125 28.28125 0l49.730468 49.730469 120.03125-120.035157c7.8125-7.808593 20.476563-7.808593 28.285156 0zm142.835938 81.230469c0 141.503906-114.515625 256-256 256-141.503906 0-256-114.515625-256-256 0-141.503906 114.515625-256 256-256 141.503906 0 256 114.515625 256 256zm-40 0c0-119.394531-96.621094-216-216-216-119.394531 0-216 96.621094-216 216 0 119.394531 96.621094 216 216 216 119.394531 0 216-96.621094 216-216zm0 0"
+          />
+        </svg>
+        <span class="text-lg capitalize">learn react</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          id="Capa_1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 407.521 407.521"
+          style="enable-background: new 0 0 407.521 407.521"
+          xml:space="preserve"
+          class="w-5 h-5 fill-current text-gray-500 absolute right-0 cursor-pointer hover:text-red-500"
+        >
+          <g>
+            <g>
+              <g>
+                <path
+                  d="M335.94,114.944H71.581c-2.86-0.243-5.694,0.702-7.837,2.612c-2.107,2.024-3.083,4.954-2.612,7.837l27.167,236.669     c3.186,26.093,25.436,45.647,51.722,45.453h131.657c27.026,0.385,49.791-20.104,52.245-47.02l22.465-236.147     c0.139-2.533-0.811-5.005-2.612-6.792C341.634,115.646,338.8,114.701,335.94,114.944z M303.026,359.45     c-1.642,15.909-15.366,27.803-31.347,27.167H140.022c-15.694,0.637-29.184-11.024-30.825-26.645L83.075,135.842h241.371     L303.026,359.45z"
+                />
+                <path
+                  d="M374.079,47.026H266.454V30.307c0.58-16.148-12.04-29.708-28.188-30.288c-0.53-0.019-1.061-0.024-1.591-0.014h-65.829     c-16.156-0.299-29.494,12.555-29.793,28.711c-0.01,0.53-0.005,1.061,0.014,1.591v16.718H33.442     c-5.771,0-10.449,4.678-10.449,10.449s4.678,10.449,10.449,10.449h340.637c5.771,0,10.449-4.678,10.449-10.449     S379.849,47.026,374.079,47.026z M245.556,30.307v16.718h-83.592V30.307c-0.589-4.579,2.646-8.768,7.225-9.357     c0.549-0.071,1.104-0.086,1.656-0.047h65.829c4.605-0.326,8.603,3.142,8.929,7.748C245.643,29.203,245.627,29.758,245.556,30.307     z"
+                />
+              </g>
+            </g>
+          </g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+          <g></g>
+        </svg>
+      </div>
+      <!-- second page -->
+      <div class="flex items-center relative border-b border-gray-500 py-5">
+        <span class="text-sm text-gray-400 mx-auto capitalize"
+          >you have no completed task.</span
+        >
+      </div>
+      <!-- undo stuff -->
+      <div class="flex items-center relative border-b border-gray-500 py-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="512pt"
+          viewBox="0 0 512 512.00241"
+          width="512pt"
+          class="fill-current text-gray-500 w-5 h-5 mr-5 cursor-pointer hover:text-sky-blue"
+        >
+          <path
+            d="m256 .00390625c-62.675781 0-123.605469 23.08203175-171.09375 62.26953175l-57.597656-57.597657c-4.585938-4.566406-11.457032-5.933593-17.429688-3.457031-5.972656 2.472656-9.878906 8.296875-9.878906 14.785156v138.664063c0 8.832031 7.167969 16 16 16h138.667969c6.484375 0 12.308593-3.902344 14.785156-9.875 2.472656-5.972657 1.109375-12.84375-3.480469-17.429688l-50.75-50.773437c39.445313-31.425782 89.363282-49.921875 140.777344-49.921875 117.632812 0 213.335938 95.703125 213.335938 213.335937 0 117.628906-95.703126 213.332032-213.335938 213.332032-56.9375 0-110.503906-22.207032-150.804688-62.527344-8.339843-8.34375-21.824218-8.34375-30.164062 0-8.34375 8.339844-8.34375 21.824218 0 30.164062 48.363281 48.382813 112.640625 75.03125 180.96875 75.03125 141.164062 0 256-114.839844 256-256 0-141.164062-114.835938-255.99999975-256-255.99999975zm0 0"
           />
         </svg>
         <span class="text-lg capitalize">learn react</span>
