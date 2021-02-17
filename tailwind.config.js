@@ -20,5 +20,6 @@ module.exports = {
       tailwindcss: {},
       autoprefixer: {},
     },
+    require("tailwind-scrollbar"),
   ],
 };
