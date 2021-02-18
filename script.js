@@ -1,6 +1,9 @@
 "use strict";
-const incompleteTasks = ["Class Lecture @ 2:30pm", "Learn React"];
-const completedTasks = ["Unlearn React"];
+let incompleteTasks = ["Class Lecture @ 2:30pm", "Learn React"];
+let completedTasks = ["Unlearn React"];
+
+//LOCAL STORAGE
+//TAILWIND, HTML, RESPONSIVE,should have just set the text input limit.
 
 // const check = document.querySelectorAll(".check");
 // const undo = document.querySelectorAll(".undo");
@@ -172,6 +175,7 @@ main.addEventListener("click", function (e) {
     main.innerHTML = "";
     main.insertAdjacentHTML("afterbegin", html);
     updateActiveNO();
+    setLocalStorage();
   } else if (e.target.classList.contains("delete")) {
     const id = e.target.closest(".relative").dataset.id;
     incompleteTasks.splice(id, 1);
@@ -179,12 +183,14 @@ main.addEventListener("click", function (e) {
     main.innerHTML = "";
     main.insertAdjacentHTML("afterbegin", html);
     updateActiveNO();
+    setLocalStorage();
   } else if (e.target.classList.contains("deleteundo")) {
     const id = e.target.closest(".relative").dataset.id;
     completedTasks.splice(id, 1);
     const html = renderCompleted();
     main.innerHTML = "";
     main.insertAdjacentHTML("afterbegin", html);
+    setLocalStorage();
   } else if (e.target.classList.contains("undo")) {
     const id = e.target.closest(".relative").dataset.id;
     incompleteTasks.push(completedTasks[id]);
@@ -193,6 +199,7 @@ main.addEventListener("click", function (e) {
     main.innerHTML = "";
     main.insertAdjacentHTML("afterbegin", html);
     updateActiveNO();
+    setLocalStorage();
   }
   if (main.innerHTML == "") {
     const html = renderNoTask();
@@ -209,6 +216,7 @@ button.addEventListener("click", function (e) {
     main.innerHTML = "";
     main.insertAdjacentHTML("afterbegin", html);
     updateActiveNO();
+    setLocalStorage();
   }
 
   //after submittimg move to the incomple tasks tab
@@ -248,3 +256,25 @@ const dateNO = new Date().getDate();
 const month = new Date().toLocaleString("default", { month: "long" });
 const week = new Date().toLocaleString("default", { weekday: "long" });
 date.textContent = `${week}, ${month} ${dateNO}`;
+
+// LOCAL STORAGE
+function setLocalStorage() {
+  localStorage.setItem("incompleteTasks", JSON.stringify(incompleteTasks));
+  localStorage.setItem("completedTasks", JSON.stringify(completedTasks));
+}
+
+function getLocalStorage() {
+  const localData1 = JSON.parse(localStorage.getItem("incompleteTasks"));
+  const localData2 = JSON.parse(localStorage.getItem("completedTasks"));
+  if (!localData1) return;
+  if (!localData2) return;
+  incompleteTasks = localData1;
+  completedTasks = localData2;
+}
+
+window.addEventListener("load", function () {
+  getLocalStorage();
+  const html = render();
+  main.innerHTML = "";
+  main.insertAdjacentHTML("afterbegin", html);
+});
